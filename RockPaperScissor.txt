@@ -1,0 +1,45 @@
+import random
+lst=["rock","paper","scissor"]
+comp_pts=0
+user_pts=0
+ties=0
+t=1
+while t!=5:
+    user = input("  rock or  paper or  scissor")
+    comp=random.choice(lst)
+    if user == comp:
+        print("Its a Tie")
+        ties=ties+1
+
+    elif user == "rock":
+        if comp=="paper":
+            print(f"Computer wraps {user} with {comp}")
+            comp_pts=comp_pts+1
+        else:
+            print(f"{user} smashes computer opted {comp}")
+            user_pts=user_pts+1
+
+    elif user == "paper":
+        if comp =="rock":
+            print(f"user wraps {comp} with {user}")
+            user_pts = user_pts + 1
+        else:
+            print(f"Computer cuts {user} with {comp}")
+            comp_pts = comp_pts + 1
+
+    elif user =="scissor":
+        if comp=="rock":
+            print(f"{comp} smashes user opted {user}")
+            comp_pts = comp_pts + 1
+        else:
+            print(f"{user} cuts computer opted {comp}")
+            user_pts = user_pts + 1
+
+    else:
+        print("Invalid!!!")
+
+    t=t+1
+    continue
+print(f"Computer points: {comp_pts}")
+print(f"User points: {user_pts}")
+print(f"Ties: {ties}")
